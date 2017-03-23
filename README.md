@@ -1,102 +1,130 @@
 Agar.io Clone
 =============
 
+**CONTRIBUTOR WANTED: I'm really sorry for not have enough time to maintain this project. I'm looking for contributors who willing to keep this project going. If you feel happy to join. Please contact me via my Twitter: @huydotnet. Thank you so much!**
+
 [![GitHub Stars](https://img.shields.io/github/stars/huytd/agar.io-clone.svg)](https://github.com/huytd/agar.io-clone/stargazers)
 [![GitHub Issues](https://img.shields.io/github/issues/huytd/agar.io-clone.svg)](https://github.com/huytd/agar.io-clone/issues)
 [![GitHub Wiki](https://img.shields.io/badge/project-wiki-ff69b4.svg)](https://github.com/huytd/agar.io-clone/wiki/Home)
-[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](#live-demo) "
+![Build Status](https://api.travis-ci.org/huytd/agar.io-clone.svg)
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](#live-demo) -
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/huytd/agar.io-clone?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-A simple Agar.io clone built with socket.io and HTML5 Canvas on top of NodeJS.
+A simple but powerful Agar.IO clone built with socket.IO and HTML5 canvas on top of NodeJS.
 
-![Image](http://i.imgur.com/igXo4xh.jpg)
+![Image](screenshot.png)
 
-## Live Demo
-[![Singapore](https://img.shields.io/badge/singapore-offline-red.svg)](http://codedaily.vn:3000/) "
-[![Heroku EU](https://img.shields.io/badge/heroku eu-online-green.svg)](https://agar-clone.herokuapp.com/) "
-[![Heroku US](https://img.shields.io/badge/heroku us-online-green.svg)](https://agar-clone-us.herokuapp.com/) "
-[![Cloud9](https://img.shields.io/badge/cloud9-online-green.svg)](https://agar-io-clone-d3vont3ch.c9.io/)
+## Live Demos
+An updated and live list of live demos can be found on the [Live Demos wiki page](https://github.com/huytd/agar.io-clone/wiki/Live-Demos).
 
 ---
 
 ## How to Play
->You can check out a more elaborated how to play on our [wiki](https://github.com/huytd/agar.io-clone/wiki/How-to-Play)
+You can check out how to play on our [wiki](https://github.com/huytd/agar.io-clone/wiki/How-to-Play).
 
 #### Game Basics
-- Move your mouse on the screen to move yourself
-- Eat food and other players in order to grow yourself (food respawns every time a player eats it)
-- Player's **mass** is the number of food eaten
-- Try to get fat and eat other players
+- Move your mouse around the screen to move your cell.
+- Eat food and other players in order to grow your character (food respawns every time a player eats it).
+- A player's **mass** is the number of food particles eaten.
+- **Objective**: Try to get as big as possible and eat other players.
 
 #### Gameplay Rules
-- Players who haven't eaten yet can't be eaten
-- Everytime a player joins the game, **3** foods will be spawned
-- Everytime a food is eaten by a player, **1** new food will be respawned
-- The more food you eat, the slower you move
+- Players who haven't eaten yet cannot be eaten as a sort of "grace" period. This invincibility fades once they gain mass.
+- Everytime a player joins the game, **3** food particles will spawn.
+- Everytime a food particle is eaten by a player, **1** new food particle will respawn.
+- The more food you eat, the slower you move to make the game fairer for all.
 
 ---
 
 ## Latest Changes
-- Game logic handled by server
-- Client side is for rendering only
-- Display player name
-- Now supporting chat 
-- Type`-ping` in the chatbox to check your ping
+- Game logic is handled by the server
+- The client side is for rendering of the canvas and it's items only.
+- Mobile optimisation.
+- Implementation of working viruses.
+- Display player name.
+- Now supporting chat. 
+- Type`-ping` in the chatbox to check your ping, as well as other commands!
 
 ---
 
 ## Installation
->You can check out a more detailed setup tutorial on our [wiki](https://github.com/huytd/agar.io-clone/wiki/Setup)
+You can simply click one of the buttons below to easily deploy this repo to Bluemix or Heroku:
+
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/huytd/agar.io-clone)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+Or...
+
+>You can check out a more detailed setup tutorial on our [wiki](https://github.com/huytd/agar.io-clone/wiki/Setup).
 
 #### Requirements
-To run the game, you'll need: 
-- NodeJS with NPM installed
-- socket.io 
-- Express
+To run / install this game, you'll need: 
+- NodeJS with NPM installed.
+- socket.IO.
+- Express.
 
 
-#### Downloading the Dependencies
-After cloning the source code from Github, you need to run the following command to download all the dependencies (socket.io, express, etc.).
+#### Downloading the dependencies
+After cloning the source code from Github, you need to run the following command to download all the dependencies (socket.IO, express, etc.):
 
 ```
 npm install
 ```
 
 #### Running the Server
-After download all the dependencies, you can run the server with the following command to run the server.
-
-```
-node server/server.js
-```
-
-or
+After downloading all the dependencies, you can run the server with the following command:
 
 ```
 npm start
 ```
 
-The game will then be accessible at `http://localhost:3000`.
+The game will then be accessible at `http://localhost:3000` or the respective server installed on. The default port is `3000`, however this can be changed in config. Further elaboration is available on our [wiki](https://github.com/huytd/agar.io-clone/wiki/Setup).
 
-## For Developers
-- [Game Architecture](https://github.com/huytd/agar.io-clone/wiki/Game-Architecture)
+
+### Running the Server with Docker
+If you have [Docker](https://www.docker.com/) installed, after cloning the repository you can run the following commands to start the server and make it acessible at `http://localhost:3000`:
+
+```
+docker build -t agarioclone_agar .
+docker run -it -p 3000:3000 agarioclone_agar
+```
+
+---
 
 ## FAQ
 1. **What is this game?**
 
-  This is a clone of AgarIO game ([http://agar.io](http://agar.io)). Somebody said that AgarIO is a clone of Osmos game on iPad, I have no idea because I'm not played Osmos yet. (Hey! Cloneception =]] )
-2. **Why you clone this game?**
+  This is a clone of the game [Agar.IO](http://agar.io/). Someone said that Agar.IO is a clone of an iPad game called Osmos, but we haven't tried it yet. (Cloneception? :P)
+  
+2. **Why would you make a clone of this game?**
 
-  Well. The original game is still online, but it's closed source. And sometime, it's damn lag. I can play very well at my company (don't tell my boss!) but can't even connect when I'm at home. That's why me and the contributors want to make an open source version of this game, for learning purpose, and to let the community add some awesome features as they want, self-host on their own server to have fun with friends,...
-3. **Any plan for an online server to compete with AgarIO or making some money?**
+  Well, while the original game is still online, it is closed-source, and sometimes, it suffers from massive lag. That's why we want to make an open source version of it: for educational purposes, and to let the community add the features that they want, self-host it on their own servers, have fun with friends and more.
+  
+3. **Any plans on adding an online server to compete with Agar.IO or making money out of it?**
 
-  Actually no! This game is belong to the community, and I have no plan to making money or compete with any product with this. And I won't have enough time to run my own server. But if you want, you can do it.
+  No. This game belongs to the open-source community, and we have no plans on making money out of it nor competing with anything. But you can of course create your own public server, let us know if you do so and we can add it to our Live Demos list!
+  
 4. **Can I deploy this game to my own server?**
 
-  Yes you can! This game was made for that!
-5. **I don't like HTML5 Canvas. Can I write my own game client with this server?**
+  Sure you can! That's what it's made for! ;)
+  
+5. **I don't like HTML5 canvas. Can I write my own game client with this server?**
 
-  Yes for sure. As long as your client support WebSocket, you can write your game client in any language/technology, even with Unity3D (there is an open source library for Unity to communicate with WebSocket).
-6. **Can I use some code in this project to my own project?**
+  Of course! As long as your client supports WebSockets, you can write your game client in any language/technology, even with Unity3D if you want (there is an open source library for Unity to communicate with WebSockets)!
+  
+6. **Can I use some code of this project on my own?**
 
   Yes you can.
 
+## For Developers
+ - [Game Architecture](https://github.com/huytd/agar.io-clone/wiki/Game-Architecture) to understand how the backend works.
+ - If you want to start your own project, I recommend you use [this template](https://github.com/huytd/node-online-game-template). Happy developing!
+ -
+
+## TODOs
+ We have an explicit [TODO](https://github.com/huytd/agar.io-clone/wiki/Coming-Features) list for the all the features we aim to develop in the future. Feel free to contribute, we'll be more than grateful.
+
+## License
+>You can check out the full license [here](https://github.com/huytd/agar.io-clone/blob/master/LICENSE).
+
+This project is licensed under the terms of the **MIT** license.
